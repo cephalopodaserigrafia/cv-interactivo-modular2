@@ -1,23 +1,162 @@
-/* Estilos personalizados */
+:root {
+    --primary-color: #2d3436;
+    --accent-color: #0984e3;
+    --text-color: #636e72;
+    --bg-color: #f4f7f6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    transition: background-color 0.5s, color 0.5s; /* Animación suave para el cambio de tema */
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
-header img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border: 5px solid #0d6efd; /* Borde azul de Bootstrap */
+/* Navegación */
+nav {
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-section {
-    padding: 60px 0;
+.nav-container {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
-/* Ajustes para que sea responsivo (Requisito 2) */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
+.nav-logo {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Contenedor Principal */
+.container {
+    max-width: 850px;
+    margin: 30px auto;
+    background: white;
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Espacio uniforme entre los iconos */
+    margin-top: 20px;
+}
+
+.contact-info span {
+    white-space: nowrap; /* Evita que el icono se separe del texto */
+}
+
+h2 {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+    font-size: 1.2rem;
+    margin-top: 40px;
+    color: #1e272e;
+    text-transform: uppercase;
+}
+
+/* Aptitudes Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.skill-category h3 {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    color: var(--accent-color);
+}
+
+/* Experiencia */
+.job {
+    margin-bottom: 30px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.role {
+    font-style: italic;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #1e272e;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer-links a {
+    color: #00d2ff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .container { padding: 20px; margin: 10px; }
+    .job-header { flex-direction: column; }
+    nav ul { display: none; } /* Simplificación para móvil */
 }
