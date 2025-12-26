@@ -6,6 +6,8 @@
 
 html {
     scroll-behavior: smooth;
+    /* Ajusta este valor según la altura de tu navbar (aprox 70px) */
+    scroll-padding-top: 80px; 
 }
 
 body {
