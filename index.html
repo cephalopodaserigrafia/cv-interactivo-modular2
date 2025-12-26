@@ -4,131 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Rahab Arancibia - UX/UI & Developer</title>
-    <link rel="stylesheet" href="../Assests/Styles/style.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Assests/Styles/style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <span class="nav-logo">RAHAB ARANCIBIA C.</span>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#aptitudes">Aptitudes</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#formacion">Formación</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="color: #0984e3;">RAHAB ARANCIBIA C.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link fw-semibold text-uppercase small" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-uppercase small" href="#Habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-uppercase small" href="#experiencia">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-uppercase small" href="#formacion">Formación</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <div class="container" id="inicio">
-        <header>
-            <div class="profile-photo-container">
-        <img src="../Assests/Images/ra.png" alt="Foto de Rahab Arancibia" class="profile-photo">
-        </div>
-            <h1>Rahab Arancibia Carrasco</h1>
-            <p class="subtitle">UX/UI Researcher & Designer | Full Stack Java Developer | Especialista en Branding</p>
-            <div class="contact-info">
-                <span>📞 <a href="tel:+56956482825">+56 9 5648 2825</a></span>
-                <span>📧 <a href="mailto:rahab.arancibia@usach.cl">rahab.arancibia@usach.cl</a></span>
-                <span>🔗 <a href="https://linkedin.com/in/rahab-arancibia" target="_blank">LinkedIn</a></span>
-                <span>🎨 <a href="https://behance.net/rahabarancibia" target="_blank">Portafolio</a></span>
+    <div class="container my-5 shadow p-4 p-md-5 bg-white rounded-3" id="inicio">
+        
+        <header class="text-center">
+            <div class="profile-photo-container mb-4 d-flex justify-content-center">
+                <img src="../Assests/Images/ra.png" alt="Foto de Rahab Arancibia" class="profile-photo">
+            </div>
+            <h1 class="display-6 fw-bold">Rahab Arancibia Carrasco</h1>
+            <p class="h5 mb-4" style="color: #0984e3; fw-600;">UX/UI Researcher & Designer | Full Stack Java Developer | Especialista en Branding</p>
+            
+            <div class="contact-info d-flex flex-wrap justify-content-center gap-3 mb-2">
+                <span>📞 <a href="tel:+56956482825" class="text-decoration-none text-dark">+56 9 5648 2825</a></span>
+                <span>📧 <a href="mailto:rahab.arancibia@usach.cl" class="text-decoration-none text-dark">rahab.arancibia@usach.cl</a></span>
+                <span>🔗 <a href="https://linkedin.com/in/rahab-arancibia" target="_blank" class="text-decoration-none text-dark">LinkedIn</a></span>
+                <span>🎨 <a href="https://behance.net/rahabarancibia" target="_blank" class="text-decoration-none text-dark">Portafolio</a></span>
             </div>
         </header>
 
-        <hr>
+        <hr class="my-5">
 
         <section class="summary">
-            <h2>Extracto Profesional</h2>
+            <h2 class="h5 mb-3 text-uppercase fw-bold border-start border-primary border-4 ps-3">Extracto Profesional</h2>
             <p>Soy Rahab Arancibia, diseñadora gráfica, ilustradora e investigadora UX chilena. Mi enfoque profesional ha evolucionado desde el diseño de identidad visual y marketing digital hacia la experiencia de usuario (UX/UI) y el desarrollo Full Stack Java. Me especializo en crear soluciones funcionales y estéticamente coherentes, combinando la investigación centrada en las personas con la capacidad técnica para construir interfaces modernas y páginas web responsivas.</p>
         </section>
 
-        <section class="skills" id="Habilidades">
-            <h2>Habilidades Destacadas</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Diseño & Prototipado</h3>
-                    <p>Figma, Adobe Photoshop, Adobe InDesign, Adobe Illustrator.</p>
+        <section class="skills mt-5" id="Habilidades">
+            <h2 class="h5 mb-4 text-uppercase fw-bold border-start border-primary border-4 ps-3">Habilidades Destacadas</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <h3 class="h6 fw-bold" style="color: #0984e3;">Diseño & Prototipado</h3>
+                    <p class="small">Figma, Adobe Photoshop, Adobe InDesign, Adobe Illustrator.</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Desarrollo Front-End</h3>
-                    <p>Bootstrap, jQuery, diseño responsivo, Visual Studio Code.</p>
+                <div class="col-md-6 col-lg-3">
+                    <h3 class="h6 fw-bold" style="color: #0984e3;">Desarrollo Front-End</h3>
+                    <p class="small">Bootstrap, jQuery, diseño responsivo, Visual Studio Code.</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Desarrollo Back-End</h3>
-                    <p>Java (Full Stack), Git, GitHub.</p>
+                <div class="col-md-6 col-lg-3">
+                    <h3 class="h6 fw-bold" style="color: #0984e3;">Desarrollo Back-End</h3>
+                    <p class="small">Java (Full Stack), Git, GitHub.</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Investigación UX</h3>
-                    <p>UX Research, metodologías ágiles, pruebas de usabilidad y recopilación de datos cualitativos/cuantitativos.</p>
+                <div class="col-md-6 col-lg-3">
+                    <h3 class="h6 fw-bold" style="color: #0984e3;">Investigación UX</h3>
+                    <p class="small">UX Research, metodologías ágiles, pruebas de usabilidad y recopilación de datos cualitativos/cuantitativos.</p>
                 </div>
             </div>
         </section>
 
-        <section class="experience" id="experiencia">
-            <h2>Experiencia Laboral</h2>
+        <section class="experience mt-5" id="experiencia">
+            <h2 class="h5 mb-4 text-uppercase fw-bold border-start border-primary border-4 ps-3">Experiencia Laboral</h2>
             
-            <div class="job">
-                <div class="job-header">
-                    <strong>Quizphi Constructora e Inmobiliaria SPA</strong>
-                    <span>Octubre 2023 - Presente</span>
+            <div class="job mb-4">
+                <div class="d-flex justify-content-between flex-wrap fw-bold">
+                    <span>Quizphi Constructora e Inmobiliaria SPA</span>
+                    <span class="text-muted">Octubre 2023 - Presente</span>
                 </div>
-                <p class="role">Diseñadora gráfica</p>
+                <p class="fst-italic mb-1" style="color: #636e72;">Diseñadora gráfica</p>
                 <ul>
                     <li>Desarrollo de identidad visual de marca y contenido audiovisual enfocado en captación de clientes.</li>
                 </ul>
             </div>
 
-            <div class="job">
-                <div class="job-header">
-                    <strong>Almabrands</strong>
-                    <span>Octubre 2023 - Presente</span>
+            <div class="job mb-4">
+                <div class="d-flex justify-content-between flex-wrap fw-bold">
+                    <span>Almabrands</span>
+                    <span class="text-muted">Octubre 2023 - Presente</span>
                 </div>
-                <p class="role">Diseñadora gráfica</p>
+                <p class="fst-italic mb-1" style="color: #636e72;">Diseñadora gráfica</p>
                 <ul>
                     <li>Diseño de colecciones gráficas y gestión técnica de producción.</li>
                 </ul>
             </div>
 
-            <div class="job">
-                <div class="job-header">
-                    <strong>Instituto Nacional de Estadísticas de Chile</strong>
-                    <span>Mayo 2024 - Mayo 2025</span>
+            <div class="job mb-4">
+                <div class="d-flex justify-content-between flex-wrap fw-bold">
+                    <span>Instituto Nacional de Estadísticas de Chile</span>
+                    <span class="text-muted">Mayo 2024 - Mayo 2025</span>
                 </div>
-                <p class="role">Encuestadora del censo</p>
+                <p class="fst-italic mb-1" style="color: #636e72;">Encuestadora del censo</p>
                 <ul>
                     <li>Aplicación de metodologías de investigación y escucha activa en contextos diversos.</li>
                 </ul>
             </div>
         </section>
 
-        <section class="education" id="formacion">
-            <h2>Formación Académica</h2>
-            <div class="edu-item">
+        <section class="education mt-5" id="formacion">
+            <h2 class="h5 mb-4 text-uppercase fw-bold border-start border-primary border-4 ps-3">Formación Académica</h2>
+            <div class="edu-item mb-2">
                 <p><strong>Diplomado UX Research: Investigación para Diseño de Experiencia</strong> – Universidad Andrés Bello (2024 - 2025).</p>
-                <div class="edu-item">
+            </div>
+            <div class="edu-item mb-2">
                 <p><strong>Diplomado Diseño UX UI Agile</strong> – Universidad de Santiago de Chile (2024).</p>
             </div>
-            <div class="edu-item">
+            <div class="edu-item mb-2">
                 <p><strong>Diplomado Competencias Digitales para el Empleo (E-commerce)</strong> – Universidad Alberto Hurtado (2024).</p>
             </div>
-            <div class="edu-item">
+            <div class="edu-item mb-2">
                 <p><strong>Diseño Producción Gráfica Digital</strong> – CFT UTEM (2009 - 2011).</p>
             </div>
         </section>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <p><strong>Rahab Arancibia Carrasco</strong> | UX/UI Researcher & Full Stack Java Developer</p>
-            <p>Chile, 2025</p>
+    <footer class="bg-dark text-white py-5 mt-5 text-center">
+        <div class="container">
+            <p class="fw-bold mb-1">Rahab Arancibia Carrasco | UX/UI Researcher & Full Stack Java Developer</p>
+            <p class="small text-secondary mb-3">Chile, 2025</p>
             <div class="footer-links">
-                <a href="mailgitto:rahab.arancibia@usach.cl">Email</a> | 
-                <a href="https://linkedin.com/in/rahab-arancibia" target="_blank">LinkedIn</a> | 
-                <a href="https://behance.net/rahabarancibia" target="_blank">Behance</a>
+                <a href="mailto:rahab.arancibia@usach.cl" class="text-info text-decoration-none mx-2">Email</a> | 
+                <a href="https://linkedin.com/in/rahab-arancibia" target="_blank" class="text-info text-decoration-none mx-2">LinkedIn</a> | 
+                <a href="https://behance.net/rahabarancibia" target="_blank" class="text-info text-decoration-none mx-2">Behance</a>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Assests/Scripts/script.js"
 </body>
 </html>
