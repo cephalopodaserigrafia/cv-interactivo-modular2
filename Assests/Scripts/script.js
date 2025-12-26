@@ -1,49 +1,60 @@
 $(document).ready(function() {
     
-    // 1. Efecto de animación al desplazarse (Scroll Reveal)
-    $(window).scroll(function() {
+    // 1. Animación al desplazarse (Scroll Reveal)
+    function reveal() {
         $('.reveal').each(function() {
-            var postion = $(this).offset().top;
-            var topOfWindow = $(window).scrollTop();
-            if (postion < topOfWindow + 600) {
+            var windowHeight = $(window).height();
+            var elementTop = $(this).offset().top;
+            var elementVisible = 100;
+            if (elementTop < $(window).scrollTop() + windowHeight - elementVisible) {
                 $(this).addClass("active");
             }
         });
-    });
+    }
 
-    // Aplicar clase reveal a las secciones principales para que se animen
-    $('section').addClass('reveal');
+    $(window).on("scroll", reveal);
+    // Aplicamos clase reveal a los elementos que queremos que aparezcan con efecto
+    $('section, header, .container').addClass('reveal');
+    reveal(); // Disparar una vez al inicio
 
-    // 2. Botón para cambiar entre temas claro/oscuro
-    $('#themeToggle').click(function() {
+    // 2. Botón Modo Claro/Oscuro
+    $('#themeToggle').on('click', function() {
         $('body').toggleClass('dark-mode');
-        $(this).text($('body').hasClass('dark-mode') ? "☀️ Modo Claro" : "🌙 Modo Oscuro");
-    });
-
-    // 3. Cambio de colores en sección Habilidades al presionar botón
-    $('#colorChange').click(function() {
-        $('#Habilidades').toggleClass('bg-highlight');
-    });
-
-    // 4. Formulario de contacto con validación en tiempo real
-    const form = $('#contactForm');
-    
-    $('#email, #name').on('input', function() {
-        if (this.checkValidity()) {
-            $(this).removeClass('is-invalid').addClass('is-valid');
+        // Cambia el texto del botón
+        if ($('body').hasClass('dark-mode')) {
+            $(this).html("☀️ Modo Claro");
         } else {
-            $(this).removeClass('is-valid').addClass('is-invalid');
+            $(this).html("🌙 Modo Oscuro");
         }
     });
 
+    // 3. Cambio de color en sección CONTACTO
+    $('#colorChange').on('click', function() {
+        // Seleccionamos la sección por su ID y alternamos la clase de resaltado
+        $('#interaccion').toggleClass('bg-highlight');
+    });
+
+    // 4. Formulario de contacto con validación
+    const form = $('#contactForm');
+    
     form.on('submit', function(event) {
         event.preventDefault();
         if (this.checkValidity()) {
             $('#formSuccess').removeClass('d-none').hide().fadeIn();
-            form.trigger("reset").removeClass('was-validated');
+            form.trigger("reset");
+            form.removeClass('was-validated');
             $('.form-control').removeClass('is-valid');
         } else {
             form.addClass('was-validated');
+        }
+    });
+
+    // Validación visual mientras escriben
+    $('#email, #name').on('input', function() {
+        if (this.checkValidity()) {
+            $(this).addClass('is-valid').removeClass('is-invalid');
+        } else {
+            $(this).addClass('is-invalid').removeClass('is-valid');
         }
     });
 });

@@ -13,6 +13,7 @@ body {
     background-color: var(--bg-color);
     color: var(--primary-color);
     line-height: 1.6;
+    transition: background-color 0.4s ease;
 }
 
 .profile-photo {
@@ -28,47 +29,82 @@ body {
     border-color: var(--accent-color) !important;
 }
 
-/* Ajustes de Navbar */
-.navbar-brand {
-    font-size: 1.2rem;
-}
-
-.nav-link:hover {
-    color: var(--accent-color) !important;
-}
-
-/* Responsividad para móviles */
-@media (max-width: 600px) {
-    .container { 
-        margin-top: 10px !important;
-        margin-bottom: 10px !important;
-    }
-}/* Modo Oscuro */
-body.dark-mode {
-    background-color: #1a1a1a;
-    color: #f4f7f6;
-}
-body.dark-mode .bg-white {
-    background-color: #2d3436 !important;
-    color: white;
-}
-body.dark-mode .text-dark, body.dark-mode .nav-link {
+/* --- MODO OSCURO --- */
+body.dark-mode .navbar-light .navbar-nav .nav-link {
     color: #dfe6e9 !important;
 }
 
-/* Animación de entrada al hacer scroll */
+body.dark-mode .navbar-brand {
+    color: #0984e3 !important; /* Mantiene el azul de tu logo */
+}
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #f4f7f6 !important;
+}
+
+body.dark-mode .bg-white, 
+body.dark-mode .container.bg-white,
+body.dark-mode .navbar {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .text-dark, 
+body.dark-mode a.text-dark,
+body.dark-mode .nav-link {
+    color: #dfe6e9 !important;
+}
+
+body.dark-mode .form-label {
+    color: #ffffff;
+}
+
+/* --- ANIMACIONES (REVEAL) --- */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease-out;
 }
+
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Cambio de color dinámico */
+/* --- RESALTADO SECCIÓN CONTACTO --- */
+/* --- RESALTADO SECCIÓN CONTACTO (Modo Claro) --- */
 .bg-highlight {
-    background-color: #ffeaa7 !important;
-    transition: background-color 0.5s ease;
+    background-color: #d1e7ff !important; /* Azul claro */
+    border: 2px solid #0984e3 !important;
+    color: #2d3436 !important;
+    transition: all 0.5s ease;
+}
+
+/* --- SOLUCIÓN: RESALTADO CUANDO EL MODO OSCURO ESTÁ ACTIVO --- */
+/* Esta regla se activa solo si AMBAS clases están presentes */
+body.dark-mode .bg-highlight {
+    background-color: #003865 !important; /* Un azul marino oscuro */
+    border: 2px solid #0984e3 !important;
+    color: #ffffff !important; /* Texto blanco puro para máximo contraste */
+}
+
+/* Aseguramos que las etiquetas de los formularios también cambien a blanco en este estado */
+body.dark-mode .bg-highlight .form-label,
+body.dark-mode .bg-highlight h2 {
+    color: #ffffff !important;
+}
+
+/* Ajuste de los inputs dentro del resaltado oscuro para que no se vean grises */
+body.dark-mode .bg-highlight .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid #0984e3;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .container { 
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
 }
