@@ -43,4 +43,32 @@ body {
         margin-top: 10px !important;
         margin-bottom: 10px !important;
     }
+}/* Modo Oscuro */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f4f7f6;
+}
+body.dark-mode .bg-white {
+    background-color: #2d3436 !important;
+    color: white;
+}
+body.dark-mode .text-dark, body.dark-mode .nav-link {
+    color: #dfe6e9 !important;
+}
+
+/* Animación de entrada al hacer scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Cambio de color dinámico */
+.bg-highlight {
+    background-color: #ffeaa7 !important;
+    transition: background-color 0.5s ease;
 }
